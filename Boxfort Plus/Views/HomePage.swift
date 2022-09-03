@@ -21,8 +21,8 @@ struct HomePage: View {
                     ChannelView()
                         .frame(width: UIScreen.main.bounds.width)
                     
-                    ForEach(MovieSection.movieSections) { section in
-                        MovieSectionView(movieSection: section)
+                    ForEach(BookSection.bookSections) { section in
+                        BookSectionView(bookSection: section)
                             .frame(width: UIScreen.main.bounds.width)
                     }
                     Spacer()

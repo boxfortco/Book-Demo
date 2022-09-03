@@ -1,5 +1,5 @@
 //
-//  VideoView.swift
+//  BookView.swift
 //  Boxfort Plus
 //
 //  Created by Matthew Ryan on 9/3/22.
@@ -7,19 +7,31 @@
 
 import SwiftUI
 
-struct VideoView: View {
+struct BookView: View {
     
-    var movie: Movie
+    var book: Book
+    @Environment(\.presentationMode) var presentationMode
+    @State private var selectedBook: Book?
  
     var body: some View {
         
         GeometryReader { geo in
             
-            VStack(alignment: .leading, spacing: 0) {
+            GradientBackgroundView()
+            
+            VStack(alignment: .trailing, spacing: 0) {
+                
+                Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                    Image(systemName: "xmark.circle.fill")
+                        .font(.title)
+                        .foregroundColor(Color.white.opacity(0.8))
+                }
+                .padding(.top, 10)
+                .padding(.trailing, 10)
                 
                 
                 TabView {
-                    ForEach (movie.pages, id:\.self) { p in
+                    ForEach (book.pages, id:\.self) { p in
                         HStack(spacing: 0) {
                             Image(p)
                                 .resizable()
@@ -39,24 +51,24 @@ struct VideoView: View {
                 
 
                 .ignoresSafeArea()
-                //.background(Color.purple)
             }
-            //.background(Color.purple)
             
-            .background(
-                Image(movie.pages[0])
+            /*.background(Color.black
+                /*
+                Image(book.pages[0])
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .blur(radius: 40)
                     .ignoresSafeArea()
-            )
+                 */
+            )*/
         }
         
         
     }
 }
-struct VideoView_Previews: PreviewProvider {
+struct BookView_Previews: PreviewProvider {
     static var previews: some View {
-        VideoView(movie: Movie.promos[0])
+        BookView(book: Book.promos[0])
     }
 }

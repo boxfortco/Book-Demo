@@ -27,12 +27,6 @@ private func getTabPages() -> some View {
         return AnyView(HomePage().frame(width: UIScreen.main.bounds.width))
     case .search:
         return AnyView(SearchView())
-   /*
-    case .downloads:
-        return AnyView(DownloadView())
-    case .profile:
-        return AnyView(ProfileView())
-    */
     
     }
 }
@@ -46,11 +40,6 @@ private func getTabIcons(geo: GeometryProxy) -> some View {
         
         TabBarIcon(tabViewRouter: tabViewRouter, currentPage: .search, width: width, height: height, systemIconName: "magnifyingglass", tabName: "Search")
         
-        /*
-        TabBarIcon(tabViewRouter: tabViewRouter, currentPage: .downloads, width: width, height: height, systemIconName: "square.and.arrow.down.fill", tabName: "Downloads")
-        
-        TabBarIcon(tabViewRouter: tabViewRouter, currentPage: .profile, width: width, height: height, systemIconName: "person.circle", tabName: "Profile")
-         */
     }
     .frame (width:geo.size.width, height: 60)
     .padding(.bottom, 20)

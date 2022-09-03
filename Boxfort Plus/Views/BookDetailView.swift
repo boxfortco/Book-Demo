@@ -1,5 +1,5 @@
 //
-//  MovieDetailView.swift
+//  BookDetailView.swift
 //  Boxfort Plus
 //
 //  Created by Matthew Ryan on 9/2/22.
@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct MovieDetailView: View {
+struct BookDetailView: View {
     
-    var movie: Movie
+    var book: Book
     @Environment(\.presentationMode) var presentationMode
-    @State private var selectedMovie: Movie?
+    @State private var selectedBook: Book?
     
     var body: some View {
         ZStack {
@@ -19,7 +19,7 @@ struct MovieDetailView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack (alignment: .leading) {
                     ZStack(alignment: .topTrailing) {
-                        Image(movie.promoImage)
+                        Image(book.promoImage)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                         
@@ -32,7 +32,7 @@ struct MovieDetailView: View {
                         .padding(.top, 10)
                     }
                     
-                    Text(movie.title)
+                    Text(book.title)
                         .font(.largeTitle)
                         .foregroundColor(.white)
                         .padding(.leading, 20)
@@ -47,7 +47,7 @@ struct MovieDetailView: View {
                     extraDetail
                      */
                     
-                    movieDetails
+                    bookDetails
                 }
             }
         }
@@ -56,19 +56,19 @@ struct MovieDetailView: View {
     private var actionButtons: some View {
         HStack {
             Button(action: {
-                selectedMovie = movie
+                selectedBook = book
             }) {
                 HStack {
-                    Image(systemName: "play.fill")
-                    Text("PLAY")
+                    Image(systemName: "book")
+                    Text("READ")
                 }
                 .foregroundColor(.black)
                 .padding(.horizontal, 30)
                 .padding(.vertical, 10)
                 .background(RoundedRectangle(cornerRadius: 2).fill(Color.white))
             }
-            .sheet(item: $selectedMovie) { movie in
-                VideoView(movie: movie)
+            .sheet(item: $selectedBook) { book in
+                BookView(book: book)
             }
             /*
             Group {
@@ -147,16 +147,16 @@ struct MovieDetailView: View {
     }
     */
      
-    private var movieDetails: some View {
-        Text(movie.details)
+    private var bookDetails: some View {
+        Text(book.details)
             .foregroundColor(.white)
             .padding()
     }
 }
 
-struct MovieDetailView_Previews: PreviewProvider {
+struct BookDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetailView(movie: Movie.promos[0])
+        BookDetailView(book: Book.promos[0])
     }
 }
 

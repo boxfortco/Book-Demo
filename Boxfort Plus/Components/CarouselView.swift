@@ -9,8 +9,8 @@ import SwiftUI
 
 struct CarouselView: View {
     
-    var promos: [Movie] = Movie.promos
-    @State private var selectedMovie: Movie?
+    var promos: [Book] = Book.promos
+    @State private var selectedBook: Book?
     
     var body: some View {
         HStack(alignment: .center, spacing: 30) {
@@ -22,7 +22,7 @@ struct CarouselView: View {
                         .cornerRadius(10)
                     
                     Button(action: {
-                        self.selectedMovie = promos[i]
+                        self.selectedBook = promos[i]
                     }) {
                         Text(promos[i].title)
                             .foregroundColor(.white)
@@ -30,8 +30,8 @@ struct CarouselView: View {
                             .frame(maxWidth: .infinity)
                             .background(Color.black.opacity(0.6).blur(radius: 3.0))
                     }
-                    .sheet(item: self.$selectedMovie) { movie in
-                        MovieDetailView(movie: movie)
+                    .sheet(item: self.$selectedBook) { book in
+                        BookDetailView(book: book)
                     }
                 }.frame(width: 400)
             }

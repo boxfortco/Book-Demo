@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     @State private var searchText: String = ""
-    @State private var selectedMovie: Movie?
+    @State private var selectedBook: Book?
     
     var body: some View {
         ZStack {
@@ -19,7 +19,7 @@ struct SearchView: View {
                 ScrollView(showsIndicators: false) {
                     exploreText
                     categoryButtons
-                    movies
+                    books
                 }
             }.padding()
             .padding(.top, 50)
@@ -54,7 +54,7 @@ struct SearchView: View {
     
     private var searchCategories = [
         SearchCategory(title: "Originals", systemImage: "star.fill"),
-        SearchCategory(title: "Movies", systemImage: "film"),
+        SearchCategory(title: "Books", systemImage: "film"),
         SearchCategory(title: "Series", systemImage: "personalhotspot")
     ]
     
@@ -66,21 +66,21 @@ struct SearchView: View {
         }
     }
     
-    private var movies: some View {
+    private var books: some View {
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 150, maximum: 200))]) {
-            ForEach(getFilteredMovies()) { movie in
+            ForEach(getFilteredBooks()) { book in
                 ZStack {
                     Button(action: {
-                        self.selectedMovie = movie
+                        self.selectedBook = book
                     }) {
-                        Image(movie.posterImage)
+                        Image(book.posterImage)
                             .resizable()
                             .cornerRadius(10)
                             .aspectRatio(contentMode: .fit)
                             .padding()
                     }
-                    .sheet(item: $selectedMovie) { movie in
-                        MovieDetailView(movie: movie)
+                    .sheet(item: $selectedBook) { book in
+                        BookDetailView(book: book)
                     }
                 }
                 
@@ -88,11 +88,11 @@ struct SearchView: View {
         }
     }
     
-    private func getFilteredMovies() -> [Movie] {
+    private func getFilteredBooks() -> [Book] {
         if searchText.isEmpty {
-            return MovieSection.sampleMovies
+            return BookSection.sampleBooks
         } else {
-            return MovieSection.sampleMovies.filter {
+            return BookSection.sampleBooks.filter {
                 $0.title.lowercased().contains(searchText.lowercased())
             }
         }

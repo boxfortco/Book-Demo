@@ -14,6 +14,4 @@ final class TabViewRouter: ObservableObject {
 enum Page {
     case home
     case search
-    //case downloads
-    //case profile
 }

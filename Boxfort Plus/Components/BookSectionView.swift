@@ -1,5 +1,5 @@
 //
-//  MovieSectionView.swift
+//  BookSectionView.swift
 //  Boxfort Plus
 //
 //  Created by Matthew Ryan on 9/2/22.
@@ -7,32 +7,32 @@
 
 import SwiftUI
 
-struct MovieSectionView: View {
+struct BookSectionView: View {
     
-    var movieSection: MovieSection
-    @State private var selectedMovie: Movie?
+    var bookSection: BookSection
+    @State private var selectedBook: Book?
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(movieSection.sectionName)
+            Text(bookSection.sectionName)
                 .font(.title3)
                 .bold()
                 .foregroundColor(.gray)
             
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack {
-                    ForEach(movieSection.movies) {movie in
+                    ForEach(bookSection.books) {book in
                         Button(action: {
-                            self.selectedMovie = movie
+                            self.selectedBook = book
                         }) {
-                            Image(movie.posterImage)
+                            Image(book.posterImage)
                                 .resizable()
                                 .scaledToFit()
                                 .cornerRadius(10)
                                 .frame(width: 150)
                         }
-                        .sheet(item: self.$selectedMovie) { movie in
-                            MovieDetailView(movie: movie)
+                        .sheet(item: self.$selectedBook) { book in
+                            BookDetailView(book: book)
                         }
                     }
                 }
@@ -42,8 +42,8 @@ struct MovieSectionView: View {
     }
 }
 
-struct MovieSectionView_Previews: PreviewProvider {
+struct BookSectionView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieSectionView(movieSection: MovieSection.recommended)
+        BookSectionView(bookSection: BookSection.recommended)
     }
 }
