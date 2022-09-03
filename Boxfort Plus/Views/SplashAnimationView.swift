@@ -17,7 +17,7 @@ final class SplashAnimationView: UIViewRepresentable {
         
         do {
             let gif = try UIImage(gifName: name)
-            let imageView = UIImageView(gifImage: gif, loopCount: 1)
+            let imageView = UIImageView(gifImage: gif, loopCount: 6)
             imageView.translatesAutoresizingMaskIntoConstraints = false
             imageView.frame = view.bounds
             

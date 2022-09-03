@@ -14,16 +14,17 @@ struct SplashView: View {
     var body: some View {
         ZStack {
             Color.black
+                .ignoresSafeArea()
             VStack {
                 if isActive {
-                    ContentView()
+                    ContentView(tabViewRouter: TabViewRouter())
                 } else {
                     SplashAnimationView()
                         .frame(width: 300, height: 300)
                 }
             }
             .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                     withAnimation {
                         self.isActive.toggle()
                     }
