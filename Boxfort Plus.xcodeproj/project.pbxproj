@@ -11,6 +11,11 @@
 		9042811628C2D802001FBE73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9042811528C2D802001FBE73 /* ContentView.swift */; };
 		9042811828C2D804001FBE73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9042811728C2D804001FBE73 /* Assets.xcassets */; };
 		9042811B28C2D804001FBE73 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9042811A28C2D804001FBE73 /* Preview Assets.xcassets */; };
+		9042812928C2D9C7001FBE73 /* kevWalk.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9042812828C2D9C7001FBE73 /* kevWalk.gif */; };
+		9042812B28C2D9FE001FBE73 /* SplashAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9042812A28C2D9FE001FBE73 /* SplashAnimationView.swift */; };
+		90E2C29128C2DACC004403B2 /* SwiftyGif in Frameworks */ = {isa = PBXBuildFile; productRef = 90E2C29028C2DACC004403B2 /* SwiftyGif */; };
+		90E2C29328C2DACC004403B2 /* SwiftyGif-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 90E2C29228C2DACC004403B2 /* SwiftyGif-Dynamic */; };
+		90E2C29528C2DCBF004403B2 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E2C29428C2DCBF004403B2 /* SplashView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,9 @@
 		9042811528C2D802001FBE73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9042811728C2D804001FBE73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9042811A28C2D804001FBE73 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9042812828C2D9C7001FBE73 /* kevWalk.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = kevWalk.gif; sourceTree = "<group>"; };
+		9042812A28C2D9FE001FBE73 /* SplashAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashAnimationView.swift; sourceTree = "<group>"; };
+		90E2C29428C2DCBF004403B2 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +34,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90E2C29128C2DACC004403B2 /* SwiftyGif in Frameworks */,
+				90E2C29328C2DACC004403B2 /* SwiftyGif-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +61,12 @@
 		9042811228C2D801001FBE73 /* Boxfort Plus */ = {
 			isa = PBXGroup;
 			children = (
+				9042812628C2D895001FBE73 /* Views */,
+				9042812528C2D88D001FBE73 /* Components */,
+				9042812428C2D886001FBE73 /* Utils */,
+				9042812328C2D87F001FBE73 /* Models */,
+				9042812228C2D875001FBE73 /* Routers */,
+				9042812128C2D86E001FBE73 /* Gif */,
 				9042811328C2D801001FBE73 /* Boxfort_PlusApp.swift */,
 				9042811528C2D802001FBE73 /* ContentView.swift */,
 				9042811728C2D804001FBE73 /* Assets.xcassets */,
@@ -65,6 +81,51 @@
 				9042811A28C2D804001FBE73 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9042812128C2D86E001FBE73 /* Gif */ = {
+			isa = PBXGroup;
+			children = (
+				9042812828C2D9C7001FBE73 /* kevWalk.gif */,
+			);
+			path = Gif;
+			sourceTree = "<group>";
+		};
+		9042812228C2D875001FBE73 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		9042812328C2D87F001FBE73 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9042812428C2D886001FBE73 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		9042812528C2D88D001FBE73 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9042812628C2D895001FBE73 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9042812A28C2D9FE001FBE73 /* SplashAnimationView.swift */,
+				90E2C29428C2DCBF004403B2 /* SplashView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +144,10 @@
 			dependencies = (
 			);
 			name = "Boxfort Plus";
+			packageProductDependencies = (
+				90E2C29028C2DACC004403B2 /* SwiftyGif */,
+				90E2C29228C2DACC004403B2 /* SwiftyGif-Dynamic */,
+			);
 			productName = "Boxfort Plus";
 			productReference = 9042811028C2D801001FBE73 /* Boxfort Plus.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +176,9 @@
 				Base,
 			);
 			mainGroup = 9042810728C2D801001FBE73;
+			packageReferences = (
+				90E2C28F28C2DACC004403B2 /* XCRemoteSwiftPackageReference "SwiftyGif" */,
+			);
 			productRefGroup = 9042811128C2D801001FBE73 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,6 +193,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9042812928C2D9C7001FBE73 /* kevWalk.gif in Resources */,
 				9042811B28C2D804001FBE73 /* Preview Assets.xcassets in Resources */,
 				9042811828C2D804001FBE73 /* Assets.xcassets in Resources */,
 			);
@@ -138,7 +207,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9042811628C2D802001FBE73 /* ContentView.swift in Sources */,
+				90E2C29528C2DCBF004403B2 /* SplashView.swift in Sources */,
 				9042811428C2D801001FBE73 /* Boxfort_PlusApp.swift in Sources */,
+				9042812B28C2D9FE001FBE73 /* SplashAnimationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +408,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		90E2C28F28C2DACC004403B2 /* XCRemoteSwiftPackageReference "SwiftyGif" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kirualex/SwiftyGif.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		90E2C29028C2DACC004403B2 /* SwiftyGif */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90E2C28F28C2DACC004403B2 /* XCRemoteSwiftPackageReference "SwiftyGif" */;
+			productName = SwiftyGif;
+		};
+		90E2C29228C2DACC004403B2 /* SwiftyGif-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90E2C28F28C2DACC004403B2 /* XCRemoteSwiftPackageReference "SwiftyGif" */;
+			productName = "SwiftyGif-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9042810828C2D801001FBE73 /* Project object */;
 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct Boxfort_PlusApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashView()
         }
     }
 }
