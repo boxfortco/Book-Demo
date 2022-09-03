@@ -68,7 +68,7 @@ struct MovieDetailView: View {
                 .background(RoundedRectangle(cornerRadius: 2).fill(Color.white))
             }
             .sheet(item: $selectedMovie) { movie in
-                VideoView()
+                VideoView(movie: movie)
             }
             /*
             Group {
