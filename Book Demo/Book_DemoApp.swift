@@ -11,7 +11,7 @@ import SwiftUI
 struct Book_DemoApp: App {
     var body: some Scene {
         WindowGroup {
-            SplashView()
+            ContentView(tabViewRouter: TabViewRouter())
         }
     }
 }
